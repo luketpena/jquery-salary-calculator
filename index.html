@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 1 Weekend Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Chathura&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dcf5605eb7.js" crossorigin="anonymous" SameSite=None secure></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js" charset="utf-8"></script>
+    <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Salary Calculator</h1>
+    </header>
+    <section id="sec-calculator" class="sec">
+      <h2>Add Employee</h2>
+      <form>
+        <div class="container">
+          <div class="row input-row">
+            <div class="col"><input type="text" id="in-fname" placeholder="First Name"></div>
+            <div class="col"><input type="text" id="in-lname" placeholder="Last Name"></div>
+          </div>
+          <div class="row input-row">
+            <div class="col-md-2"><input type="number" id="in-id" placeholder="ID" max="9999"></div>
+            <div class="col-md-5"><input type="text" id="in-title" placeholder="Title"></div>
+            <div class="col-md-5"><input type="number" id="in-salary" placeholder="Annual Salary"></div>
+          </div>
+          <div class="row">
+            <div class="col"><button id="in-btn">Submit</button></div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section id="sec-table" class="sec">
+      <h2>Employees</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>First Name</td> <td>Last Name</td> <td>ID</td> <td>Title</td> <td>Annual Salary</td> <td> &nbsp; </td>
+          </tr>
+        </thead>
+        <tbody id="employee-table">
+
+        </tbody>
+      </table>
+      <h3>Total Monthly: <span id="total-monthly">$0</span></h3>
+    </section>
+
+    <div id="fade-box"></div>
+  </body>
+</html>
