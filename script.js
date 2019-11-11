@@ -1,11 +1,11 @@
 console.log('JS');
 $(document).ready(jq_init);
 
-const employees = [];
+const employees = []; //holds all employee objects
 let lastFocus = $(':focus'); //used for form position control
 let totalMonthly = 0; //total monthly salaries
 let budget = 20000; //budget for monthly salaries
-let budgetOverdraw = false;
+let budgetOverdraw = false; //toggles on being overbudget and returning to within budget
 
 function jq_init() {
   console.log('JQ');
@@ -17,7 +17,9 @@ function jq_init() {
 function addEmployee() {
   event.preventDefault();
 
+  //If values are in the inputs, then continue
   if ($('#in-fname').val()!='' && $('#in-lname').val()!='' && $('#in-id').val()!='' && $('#in-title').val()!='' && $('#in-salary').val()!='') {
+    //Add the new employee to the array
     employees.push({
       fname: $('#in-fname').val(),
       lname: $('#in-lname').val(),
@@ -25,8 +27,9 @@ function addEmployee() {
       title: $('#in-title').val(),
       salary: $('#in-salary').val()
     });
-    calculateTotalMonthly();
 
+    //Calculate the monthly cost
+    calculateTotalMonthly();
     //Append new values
     appendEmployees();
 
@@ -49,7 +52,7 @@ function calculateTotalMonthly() {
     totalMonthly += Math.floor(Number(employee.salary)/12);
   }
   //Change the displayed monthly total
-  $('#total-monthly').text(`$${numberWithCommas(totalMonthly)}`);
+  $('#total-monthly').text(`$${numberWithCommas(totalMonthly.toFixed(2))}`);
   //Check for overdraw status
   switch(budgetOverdraw) {
     case true:
